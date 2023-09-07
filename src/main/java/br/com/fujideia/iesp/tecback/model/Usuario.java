@@ -7,7 +7,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 /* -PRIMEIRO PASSO-
-Mapeamento da classe java para o banco de dados  */
+Faz Mapeamento da classe java para o banco de dados
+ -Model:Responsavel pelas classes de entidades,Conexao com o BD.-
+ */
 
 @Getter
 @Setter

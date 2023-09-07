@@ -2,7 +2,8 @@ package br.com.fujideia.iesp.tecback.controller;
 
 /* - QUARTO PASSO
 Primeiro vamos mapear os requeste map,
-*  -metodo quer salva Post */
+*  -metodo quer salva Post
+  CONTROLLER: Orquestrador,receber chamadas e retorna dados.*/
 
 import br.com.fujideia.iesp.tecback.model.Filme;
 import br.com.fujideia.iesp.tecback.model.Usuario;
@@ -32,6 +33,18 @@ public class UsuarioController {
         return ResponseEntity.ok(service.listar());
     }
 
+    @GetMapping ("/{idConsulta}")
+    public ResponseEntity<Usuario>consultarPorId(@PathVariable int idConsulta){
+        return ResponseEntity.ok(service.consultarPorId(idConsulta));
+    }
+
+    @DeleteMapping("/{deletId}")
+    public ResponseEntity excluirPorId(@PathVariable int deletId){
+        service.excluirPorId(deletId);
+        return ResponseEntity.ok().build();
+    }
+
 
 
 }
+

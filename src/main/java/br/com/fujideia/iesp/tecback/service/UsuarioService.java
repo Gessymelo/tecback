@@ -1,17 +1,21 @@
 package br.com.fujideia.iesp.tecback.service;
 
+
 import br.com.fujideia.iesp.tecback.model.Usuario;
 import br.com.fujideia.iesp.tecback.repository.UsuarioRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 /* TERCEIRO PASSO
-Utilizado para fazer regra de negocio e validacao*/
+* SERVICES: Separar a regra de negocio, regras da aplicaçao
+*  e regras de aplicaçao para que possam ser testadas e reutilizadas por outras partes (regras de negocio) */
 
+@Slf4j
 @Service
-public class                   UsuarioService {
+public class UsuarioService {
+
 
     @Autowired
     private UsuarioRepository repository;
@@ -32,6 +36,10 @@ public class                   UsuarioService {
         repository.delete(usuario);
     }
 
-
+    public void excluirPorId(int id){
+        repository.deleteById(id);
+    }
 
 }
+
+
